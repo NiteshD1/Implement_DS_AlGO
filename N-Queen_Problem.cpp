@@ -59,7 +59,7 @@ bool can_place(int board[][10],int i,int j,int n){
 
 }
 
-void solve_sudoku(int board[][10],int i,int n){
+void solve_nqueen(int board[][10],int i,int n){
 
 if(i==n){
 
@@ -81,7 +81,7 @@ for(int j=0;j<n;j++){
     if(can_place(board,i,j,n)){
         board[i][j]=1;
 
-        solve_sudoku(board,i+1,n);
+        solve_nqueen(board,i+1,n);
         board[i][j]=0;
     }
 }
@@ -93,7 +93,7 @@ int n;
 int board[10][10]={0};
 cin>>n;
 
-solve_sudoku(board,0,n);
+solve_nqueen(board,0,n);
 
 
 return 0;
